@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Döntéshozó</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background-image: url('asd.png');
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-color: #000; /* fallback szín, ha a kép nem tölt be */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .tartalom {
+      max-width: 500px;
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 20px;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      font-size: 24px;
+      color: #333;
+    }
+
+    input[type="text"] {
+      padding: 10px;
+      width: 100%;
+      font-size: 16px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 8px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    button:hover {
+      background-color: #43a047;
+    }
+
+    #valasz {
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+      color: #222;
+    }
+  </style>
+</head>
+<body>
+  <div class="tartalom">
+    <h1>Döntéshozó 3000</h1>
+    <input type="text" id="kerdes" placeholder="Írd be a kérdésed...">
+    <button onclick="dontes()">Dönts helyettem</button>
+    <div id="valasz"></div>
+  </div>
+
+  <script>
+    function dontes() {
+      const valaszok = ["IGEN!!!", "Nem...", "Kérdezd Laurát💫"];
+      const randomIndex = Math.floor(Math.random() * valaszok.length);
+      const valasz = valaszok[randomIndex];
+      document.getElementById("valasz").innerText = valasz;
+    }
+  </script>
+</body>
+</html>
